@@ -20,16 +20,16 @@ class App extends Component {
 
  componentDidMount(){
    const getData = async () => {
-      const response = await axios.get('http://www.qlue.co.id/vacancy/svc/getDataExample.php')
-      this.setState({stations:response.data})
+      const { data } = await axios.get('http://www.qlue.co.id/vacancy/svc/getDataExample.php')
+      this.setState({stations:data})
   }
   getData() 
 }
 
  componentWillUpdate(){
    const getData = async () => {
-      const response = await axios.get('http://waze.qlue.id/jakarta/update/0atxn84I3hx2WmNm5ifPDZkJaLERZD9A.json')
-      this.setState({alerts:response.data.alerts})
+      const { data } = await axios.get('http://waze.qlue.id/jakarta/update/0atxn84I3hx2WmNm5ifPDZkJaLERZD9A.json')
+      this.setState({alerts:data.alerts})
   }
   getData()   
  }
