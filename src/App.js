@@ -19,17 +19,19 @@ class App extends Component {
  handleChange = (e, { value }) => this.setState({ value })
 
  componentDidMount(){
-   axios.get('http://www.qlue.co.id/vacancy/svc/getDataExample.php')
-   .then( response => {
-     this.setState({stations:response.data})
-   })
- }
+   const getData = async () => {
+      const response = await axios.get('http://www.qlue.co.id/vacancy/svc/getDataExample.php')
+      this.setState({stations:response.data})
+  }
+  getData() 
+}
 
  componentWillUpdate(){
-   axios.get('http://waze.qlue.id/jakarta/update/0atxn84I3hx2WmNm5ifPDZkJaLERZD9A.json')
-   .then( response => {
-     this.setState({alerts:response.data.alerts})
-   })
+   const getData = async () => {
+      const response = await axios.get('http://waze.qlue.id/jakarta/update/0atxn84I3hx2WmNm5ifPDZkJaLERZD9A.json')
+      this.setState({alerts:response.data.alerts})
+  }
+  getData()   
  }
 
   renderStationMarker (){
